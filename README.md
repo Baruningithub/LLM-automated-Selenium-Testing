@@ -9,3 +9,9 @@
 2. The generated script is saved and executed in a separate [file](https://gitlab.mindfire.co.in/barunh/openai-automated-selenium-project/-/blob/main/login_response1.py
 ).
 3. We are able succesfully interact with all classes in the login page, move to data entry page, interact with all its classes and finally quit the driver.
+
+
+### Modules/Libraries used
+selenium
+webdriver
+openai

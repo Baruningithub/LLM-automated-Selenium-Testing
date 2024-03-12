@@ -4,7 +4,7 @@
 
 1. This Project uses OpenAI API to generate Selenium script of given html/js pages as prompt.
 2. Here we are giving a simple two page html/js one [login form](https://gitlab.mindfire.co.in/barunh/openai-automated-selenium-project/-/blob/main/index.html
-) followed by one [data entry](https://gitlab.mindfire.co.in/barunh/openai-automated-selenium-project/-/blob/main/data_entry.js) form to the [script generator](https://gitlab.mindfire.co.in/barunh/openai-automated-selenium-project/-/blob/main/login_response1.py
+) followed by one [data entry](https://gitlab.mindfire.co.in/barunh/openai-automated-selenium-project/-/blob/main/data_entry.js) form to the [script generator](https://gitlab.mindfire.co.in/barunh/openai-automated-selenium-project/-/blob/main/openai_gpt%203.5_generator.ipynb
 ).
 2. The generated script is saved and executed in a separate [file](https://gitlab.mindfire.co.in/barunh/openai-automated-selenium-project/-/blob/main/selenium_script.py
 ).

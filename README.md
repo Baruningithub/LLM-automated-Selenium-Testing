@@ -13,7 +13,5 @@
 
 ### Modules/Libraries used
 selenium
-
 webdriver
-
 openai

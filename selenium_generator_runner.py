@@ -104,9 +104,10 @@ def _sanitize_output(text:str):
 
 # the model chain 
 # chat_template - prompts are read from here
-# chat_model - the model of the chain
+# chat_model - the model of the chain (returns the selenium script as an openai chat object)
 # StrOutputParser() - converts response into string parser
 # _sanitize_output - modifies the string converted response into executable code
+# PythonREPL().run - excutes the final sanitised result (the selenium starts interacting with the webpages)
 chain = chat_template | chat_model | StrOutputParser() | _sanitize_output | PythonREPL().run
 
 # finally invoke chain results, passing urls as user inputs

@@ -8,6 +8,7 @@ from langchain_core.output_parsers import StrOutputParser
 # Load environment variables from the .env file where our api key is stored
 load_dotenv()
 
+# fetching the api key from the .env file
 api_k = os.getenv('OPENAI_API_KEY')
 
 # chat model object (default madel- gpt3.5 turbo)

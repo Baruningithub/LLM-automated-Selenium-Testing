@@ -3,7 +3,6 @@ import os
 from langchain_core.prompts import ChatPromptTemplate
 from dotenv import load_dotenv
 from langchain_experimental.utilities import PythonREPL
-from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 
 # Load environment variables from the .env file where our api key is stored
@@ -11,12 +10,13 @@ load_dotenv()
 
 api_k = os.getenv('OPENAI_API_KEY')
 
-# chat model 
+# chat model object (default madel- gpt3.5 turbo)
 chat_model = ChatOpenAI(api_key = api_k)
 
 
 # chat template 
-
+# two parts, one is the sysytem prompt where we tell the model that you are a selenium script generator)
+# second is the human prompt where we pass the html/js pages (we are also passing url of the pages so the selenium web driver can easily access the page)
 chat_template = ChatPromptTemplate.from_messages(
     [
         ("system", """You are a python selenium 4.18.1 script generator, which generates python 
@@ -96,14 +96,17 @@ chat_template = ChatPromptTemplate.from_messages(
 )
 
 
-# # converting chat to readable prompt
-# chat_prompt = chat_template.format_messages()
-
+# function that modifies the string converted response into executable code by removing uneccessary tags
 def _sanitize_output(text:str):
     _, after = text.split("```python")
     return after.split("```")[0]
 
+
+# the model chain 
+# chat_template - prompts are read from here
+# chat_model - the model of the chain
+# StrOutputParser() - converts response into string parser
+# _sanitize_output - modifies the string converted response into executable code
 chain = chat_template | chat_model | StrOutputParser() | _sanitize_output | PythonREPL().run
 
-response = chain.invoke({"url1":"http://127.0.0.1:5500/openai-automated-selenium-project/index.html","url2":"http://127.0.0.1:5500/openai-automated-selenium-project/data_entry.html"})
-print(response)
+chain.invoke({"url1":"http://127.0.0.1:5500/openai-automated-selenium-project/webfiles/index.html","url2":"http://127.0.0.1:5500/openai-automated-selenium-project/webfiles/data_entry.html"})

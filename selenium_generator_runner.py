@@ -109,4 +109,5 @@ def _sanitize_output(text:str):
 # _sanitize_output - modifies the string converted response into executable code
 chain = chat_template | chat_model | StrOutputParser() | _sanitize_output | PythonREPL().run
 
+# finally invoke chain results, passing urls as user inputs
 chain.invoke({"url1":"http://127.0.0.1:5500/openai-automated-selenium-project/webfiles/index.html","url2":"http://127.0.0.1:5500/openai-automated-selenium-project/webfiles/data_entry.html"})

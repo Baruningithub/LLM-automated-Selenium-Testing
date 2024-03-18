@@ -4,6 +4,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from dotenv import load_dotenv
 from langchain_experimental.utilities import PythonREPL
 from langchain_core.output_parsers import StrOutputParser
+from utilities import sanitize_output
 
 # Load environment variables from the .env file where our api key is stored
 load_dotenv()
@@ -98,9 +99,7 @@ chat_template = ChatPromptTemplate.from_messages(
 
 
 # function that modifies the string converted response into executable code by removing uneccessary tags
-def _sanitize_output(text:str):
-    _, after = text.split("```python")
-    return after.split("```")[0]
+
 
 
 # the model chain 
@@ -109,7 +108,7 @@ def _sanitize_output(text:str):
 # StrOutputParser() - converts response into string parser
 # _sanitize_output - modifies the string converted response into executable code
 # PythonREPL().run - excutes the final sanitised result (the selenium starts interacting with the webpages)
-chain = chat_template | chat_model | StrOutputParser() | _sanitize_output | PythonREPL().run
+chain = chat_template | chat_model | StrOutputParser() | sanitize_output | PythonREPL().run
 
 # finally invoke chain results, passing urls as user inputs
 chain.invoke({"url1":"http://127.0.0.1:5500/openai-automated-selenium-project/webfiles/index.html","url2":"http://127.0.0.1:5500/openai-automated-selenium-project/webfiles/data_entry.html"})

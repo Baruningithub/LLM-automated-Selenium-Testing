@@ -10,7 +10,5 @@
 - selenium (internally)
 - webdriver (internally)
 - openai/ChatOpenAI
-- langchain_core.prompts.ChatPromptTemplate
-- langchain_experimental.utilities.PythonREPL
-- langchain_core.output_parsers.StrOutputParser
+- langchain
 

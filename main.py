@@ -98,8 +98,6 @@ chat_template = ChatPromptTemplate.from_messages(
 )
 
 
-# function that modifies the string converted response into executable code by removing uneccessary tags
-
 
 
 # the model chain 
@@ -111,4 +109,5 @@ chat_template = ChatPromptTemplate.from_messages(
 chain = chat_template | chat_model | StrOutputParser() | sanitize_output | PythonREPL().run
 
 # finally invoke chain results, passing urls as user inputs
-chain.invoke({"url1":"http://127.0.0.1:5500/openai-automated-selenium-project/webfiles/index.html","url2":"http://127.0.0.1:5500/openai-automated-selenium-project/webfiles/data_entry.html"})
+if __name__=='__main__':
+  chain.invoke({"url1":"http://127.0.0.1:5500/openai-automated-selenium-project/webfiles/index.html","url2":"http://127.0.0.1:5500/openai-automated-selenium-project/webfiles/data_entry.html"})

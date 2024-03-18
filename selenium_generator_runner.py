@@ -11,7 +11,7 @@ load_dotenv()
 # fetching the api key from the .env file
 api_k = os.getenv('OPENAI_API_KEY')
 
-# chat model object (default madel- gpt3.5 turbo)
+# chat model object (default model- gpt3.5 turbo)
 chat_model = ChatOpenAI(api_key = api_k)
 
 

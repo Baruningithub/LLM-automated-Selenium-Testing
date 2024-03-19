@@ -6,7 +6,7 @@ from langchain_experimental.utilities import PythonREPL
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.exceptions import OutputParserException
 from utilities import sanitize_output
-from chat_templates import html_src, system_prompt_choices, system_prompt
+from chat_templates import html_src, system_prompt
 
 # Load environment variables from the .env file where our api key is stored
 load_dotenv()
@@ -25,7 +25,7 @@ src_prompt = html_src(["Templates/index.html","Templates/data_entry.html"])
 chat_template = ChatPromptTemplate.from_messages(
     [
         ("system", sys_prompt),
-        ("human", src_prompt)
+        ("human", src_prompt),
         ("human", "{url1} , {url2}")
     ]
 )
@@ -39,7 +39,9 @@ chain = chat_template | chat_model | StrOutputParser() | sanitize_output | Pytho
 
 # finally invoke chain results, passing urls as user inputs
 if __name__=='__main__':
+  
   try:
-    chain.invoke({"url1":"http://127.0.0.1:5500/openai-automated-selenium-project/webfiles/index.html","url2":"http://127.0.0.1:5500/openai-automated-selenium-project/webfiles/data_entry.html"})
+    chain.invoke({"url1":"http://127.0.0.1:5500/openai-automated-selenium-project/Templates/index.html","url2":"http://127.0.0.1:5500/openai-automated-selenium-project/Templates/data_entry.html"})
+  
   except OutputParserException as e:
     print(f"Error occurred while parsing the output: {e}")

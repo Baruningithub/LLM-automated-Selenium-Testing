@@ -18,7 +18,7 @@ api_k = os.getenv('OPENAI_API_KEY')
 chat_model = ChatOpenAI(api_key = api_k)
 
 
-sys_prompt = system_prompt("Selenium 4.18.1 using html src")
+sys_prompt = system_prompt("Selenium generator using html src")
 src_prompt = html_src(["Templates/index.html","Templates/data_entry.html"])
 
 # chat template 
@@ -44,4 +44,4 @@ if __name__=='__main__':
     chain.invoke({"url1":"http://127.0.0.1:5500/openai-automated-selenium-project/Templates/index.html","url2":"http://127.0.0.1:5500/openai-automated-selenium-project/Templates/data_entry.html"})
   
   except OutputParserException as e:
-    print(f"Error occurred while parsing the output: {e}")
+    print("Error occurred while parsing the output: ",e)

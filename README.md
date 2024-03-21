@@ -6,9 +6,8 @@
 4. We are able to succesfully interact with all classes in the login page, redirect to data entry page, interact with all its classes and finally quit the driver.
 
 
-#### Modules/Libraries used
-- selenium (internally)
-- webdriver (internally)
-- openai/ChatOpenAI
-- langchain
+#### Modules/Frameworks used
+- Selenium Python (API to write functional tests using Selenium WebDriver)
+- openai/ChatOpenAI (OpenAI API)
+- Langchain (Framework for llms)
 

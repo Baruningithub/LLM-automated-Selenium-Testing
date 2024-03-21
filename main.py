@@ -17,7 +17,7 @@ api_k = os.getenv('OPENAI_API_KEY')
 # chat model object (default model- gpt3.5 turbo)
 chat_model = ChatOpenAI(api_key = api_k)
 
-
+home_url = "http://127.0.0.1:5500/openai-automated-selenium-project/Templates/index.html"
 sys_prompt = system_prompt("Selenium generator using html src")
 src_prompt = html_src(["Templates/index.html","Templates/data_entry.html"])
 
@@ -26,7 +26,7 @@ chat_template = ChatPromptTemplate.from_messages(
     [
         ("system", sys_prompt),
         ("human", src_prompt),
-        ("human", "{url1} , {url2}")
+        ("human", "{url}")
     ]
 )
 
@@ -41,7 +41,7 @@ chain = chat_template | chat_model | StrOutputParser() | sanitize_output | Pytho
 if __name__=='__main__':
   
   try:
-    chain.invoke({"url1":"http://127.0.0.1:5500/openai-automated-selenium-project/Templates/index.html","url2":"http://127.0.0.1:5500/openai-automated-selenium-project/Templates/data_entry.html"})
+    chain.invoke({"url":home_url})
   
   except OutputParserException as e:
     print("Error occurred while parsing the output: ",e)

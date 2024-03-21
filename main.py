@@ -7,6 +7,9 @@ from langchain_core.output_parsers import StrOutputParser
 from langchain_core.exceptions import OutputParserException
 from utilities import sanitize_output
 from chat_templates import html_src, system_prompt
+from logger import logger
+import requests
+from requests.exceptions import RequestException
 
 # Load environment variables from the .env file where our api key is stored
 load_dotenv()
@@ -41,7 +44,17 @@ chain = chat_template | chat_model | StrOutputParser() | sanitize_output | Pytho
 if __name__=='__main__':
   
   try:
+    response = requests.get(home_url)
+    response.raise_for_status()
+
+    logger.info("Chain execution has started . . . ")
     chain.invoke({"url":home_url})
-  
+    logger.info("Chain has successfully executed")
+
+  except RequestException as re:
+    logger.error("Unable request web application")
+    print("Error occurred while requesting web app: ",re)
+
   except OutputParserException as e:
+    logger.error("Unable to execute chain")
     print("Error occurred while parsing the output: ",e)

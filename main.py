@@ -35,21 +35,25 @@ chat_template = ChatPromptTemplate.from_messages(
 
 
 # the model chain 
-# StrOutputParser() - converts response into string parser
+# StrOutputParser() - converts response into parsable string
 # PythonREPL().run - excutes the final sanitised result (the selenium starts interacting with the webpages)
 chain = chat_template | chat_model | StrOutputParser() | sanitize_output | PythonREPL().run
 
 
-# finally invoke chain results, passing urls as user inputs
 if __name__=='__main__':
   
   try:
+    # checking web appplication status
     response = requests.get(home_url)
     response.raise_for_status()
 
-    logger.info("Chain execution has started . . . ")
-    chain.invoke({"url":home_url})
-    logger.info("Chain has successfully executed")
+    # invoking chain results
+    logger.info("Chain execution has started . . . ") 
+
+    chain.invoke({"url":home_url})    # chain invoke 
+
+    logger.info("Chain has successfully executed.")
+    
 
   except RequestException as re:
     logger.error("Unable request web application")

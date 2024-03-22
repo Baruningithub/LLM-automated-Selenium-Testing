@@ -2,7 +2,7 @@
 
 def html_src(file_paths:list):
     '''
-    Reads multiple html src files, concatenates their content and returns a readable string for our prompt
+    Reads multiple html src files, concatenates their content and returns the string
     '''
 
     combined_contents = []
@@ -25,8 +25,8 @@ system_prompt_choices = {
     "Selenium generator using html src":
     '''You are a Python Selenium 4.18.1 script generator, which generates Python Selenium 4.18.1 script for all 
     classes (use ID or path) of all given HTML/JavaScript pages separated by '# next page' followed by the home 
-    page URL which you can directly use as get URL. Use http try and exceptions for the pages and if exception 
-    rise print it in console, also add time sleeps after input send keys and for web waiting.''',
+    page URL which you can directly use as get URL. Use http try and exceptions for the pages, also add time 
+    sleeps after input send keys and for web waiting.''',
 
     "Selenium generator from url" :""
 }    

@@ -10,7 +10,7 @@ from chat_templates import html_src, system_prompt
 from logs.logger import logger
 import requests
 from requests.exceptions import RequestException
-from configparser import ConfigParser 
+from configs.read_config import Read_Config 
 
 # Load environment variables from the .env file where our api key is stored
 load_dotenv()
@@ -19,15 +19,13 @@ load_dotenv()
 api_k = os.getenv('OPENAI_API_KEY')
 
 # chat model object (default model- gpt3.5 turbo)
-chat_model = ChatOpenAI(api_key = api_k)
+chat_model = ChatOpenAI(temperature=0.7, api_key = api_k)
 
 # fetching url from config file
-config = ConfigParser()
-config.read("configs/url.ini")
-url = config['admin_page']['url']
+url = Read_Config("configs/url.ini", "admin_page", "url")
 
 sys_prompt = system_prompt("Selenium generator using html src")
-src_prompt = html_src(["Templates/index.html","Templates/data_entry.html"])
+src_prompt = html_src(["html_templates/index.html","html_templates/data_entry.html"])
 
 # chat template 
 chat_template = ChatPromptTemplate.from_messages(

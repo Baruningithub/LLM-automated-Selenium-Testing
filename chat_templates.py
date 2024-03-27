@@ -1,10 +1,15 @@
 # functions to define our prompt templates
 
-def html_src(file_paths:list):
-    '''
-    Reads multiple html src files, concatenates their content and returns the string
-    '''
+def html_src(file_paths:list)->str:
+    """Reads multiple html src files, concatenates their content and returns the string
 
+    Args:
+        file_paths (list): _description_
+
+    Returns:
+        str: _description_
+    """
+    
     combined_contents = []
     for file_path in file_paths:
         try:
@@ -32,8 +37,13 @@ system_prompt_choices = {
 }    
 
 
-def system_prompt(choice):
-    '''
-    Returns detailed predefined prompt for the system based on your choice
-    '''
+def system_prompt(choice:str)->str:
+    """Returns detailed predefined prompt for the system based on your choice
+
+    Args:
+        choice (str): _description_
+
+    Returns:
+        str: _description_
+    """
     return system_prompt_choices[choice]

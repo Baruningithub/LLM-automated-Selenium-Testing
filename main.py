@@ -5,9 +5,9 @@ from dotenv import load_dotenv
 from langchain_experimental.utilities import PythonREPL
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.exceptions import OutputParserException
-from utilities import sanitize_output
+from utils import sanitize_output
 from chat_templates import html_src, system_prompt
-from logger import logger
+from logs.logger import logger
 import requests
 from requests.exceptions import RequestException
 

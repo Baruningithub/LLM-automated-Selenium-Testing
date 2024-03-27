@@ -4,10 +4,10 @@ def sanitize_output(text:str)->str:
     """modifies the string converted response into executable code string
 
     Args:
-        text (str): _description_
+        text (str): llm response text
 
     Returns:
-        str: _description_
+        str: sanitized text
     """
     
     _, after = text.split("```python")

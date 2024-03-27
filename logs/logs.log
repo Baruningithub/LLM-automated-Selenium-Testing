@@ -18,3 +18,12 @@
 2024-03-21 16:07:27,620 - 56 - logger - INFO - Chain execution has started . . . 
 2024-03-21 16:07:38,227 - 58 - logger - INFO - Chain has successfully executed
 2024-03-21 16:10:47,342 - 55 - logger - ERROR - Unable request web application
+2024-03-27 12:58:18,065 - 51 - logs.logger - INFO - Chain execution has started . . . 
+2024-03-27 12:58:30,043 - 55 - logs.logger - INFO - Chain has successfully executed.
+2024-03-27 12:59:10,232 - 51 - logs.logger - INFO - Chain execution has started . . . 
+2024-03-27 12:59:30,657 - 55 - logs.logger - INFO - Chain has successfully executed.
+2024-03-27 13:19:45,079 - 51 - logs.logger - INFO - Chain execution has started . . . 
+2024-03-27 13:20:09,210 - 55 - logs.logger - INFO - Chain has successfully executed.
+2024-03-27 15:06:37,379 - 64 - logs.logger - ERROR - Unable to request web application
+2024-03-27 15:07:19,681 - 56 - logs.logger - INFO - Chain execution has started . . . 
+2024-03-27 15:07:44,200 - 60 - logs.logger - INFO - Chain has successfully executed.

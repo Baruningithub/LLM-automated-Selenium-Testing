@@ -10,6 +10,7 @@ from chat_templates import html_src, system_prompt
 from logs.logger import logger
 import requests
 from requests.exceptions import RequestException
+from configparser import ConfigParser 
 
 # Load environment variables from the .env file where our api key is stored
 load_dotenv()
@@ -20,7 +21,11 @@ api_k = os.getenv('OPENAI_API_KEY')
 # chat model object (default model- gpt3.5 turbo)
 chat_model = ChatOpenAI(api_key = api_k)
 
-home_url = "http://127.0.0.1:5500/openai-automated-selenium-project/Templates/index.html"
+# fetching url from config file
+config = ConfigParser()
+config.read("configs/url.ini")
+url = config['admin_page']['url']
+
 sys_prompt = system_prompt("Selenium generator using html src")
 src_prompt = html_src(["Templates/index.html","Templates/data_entry.html"])
 
@@ -44,13 +49,13 @@ if __name__=='__main__':
   
   try:
     # checking web appplication status
-    response = requests.get(home_url)
+    response = requests.get(url)
     response.raise_for_status()
 
     # invoking chain results
     logger.info("Chain execution has started . . . ") 
 
-    chain.invoke({"url":home_url})    # chain invoke 
+    chain.invoke({"url":url})    # chain invoke 
 
     logger.info("Chain has successfully executed.")
 

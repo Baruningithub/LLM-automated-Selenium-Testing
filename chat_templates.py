@@ -1,13 +1,13 @@
 # functions to define our prompt templates
 
 def html_src(file_paths:list)->str:
-    """Reads multiple html src files, concatenates their content and returns the string
+    """Reads multiple html src files, concatenates their content
 
     Args:
-        file_paths (list): _description_
+        file_paths (list): source files
 
     Returns:
-        str: _description_
+        str: source as text
     """
     
     combined_contents = []
@@ -41,9 +41,9 @@ def system_prompt(choice:str)->str:
     """Returns detailed predefined prompt for the system based on your choice
 
     Args:
-        choice (str): _description_
+        choice (str): Simple predefined choice
 
     Returns:
-        str: _description_
+        str: predefined prompt for oyur choice
     """
     return system_prompt_choices[choice]

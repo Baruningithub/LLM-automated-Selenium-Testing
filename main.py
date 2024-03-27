@@ -53,10 +53,10 @@ if __name__=='__main__':
     chain.invoke({"url":home_url})    # chain invoke 
 
     logger.info("Chain has successfully executed.")
-    
+
 
   except RequestException as re:
-    logger.error("Unable request web application")
+    logger.error("Unable to request web application")
     print("Error occurred while requesting web app: ",re)
 
   except OutputParserException as e:

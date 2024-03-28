@@ -15,3 +15,26 @@
  2024-03-27 18:31:28,623 - 58 - logs.logger - INFO - Chain has successfully executed. 
  2024-03-27 18:31:52,591 - 54 - logs.logger - INFO - Chain execution has started . . .  
  2024-03-27 18:32:14,900 - 58 - logs.logger - INFO - Chain has successfully executed. 
+ 2024-03-28 14:20:39,427 - 70 - logs.logger - ERROR - Unable to request web application 
+ 2024-03-28 14:22:39,271 - 62 - logs.logger - INFO - Chain execution has started . . .  
+ 2024-03-28 14:23:27,466 - 66 - logs.logger - INFO - Chain has successfully executed. 
+ 2024-03-28 14:29:53,340 - 36 - logs.logger - INFO - Starting scraping...  
+ 2024-03-28 14:29:57,418 - 38 - logs.logger - INFO - Content scraped 
+ 2024-03-28 14:29:57,425 - 66 - logs.logger - INFO - Chain execution has started . . .  
+ 2024-03-28 14:30:04,141 - 70 - logs.logger - INFO - Chain has successfully executed. 
+ 2024-03-28 14:30:36,580 - 36 - logs.logger - INFO - Starting scraping...  
+ 2024-03-28 14:30:40,760 - 38 - logs.logger - INFO - Content scraped 
+ 2024-03-28 14:30:40,767 - 66 - logs.logger - INFO - Chain execution has started . . .  
+ 2024-03-28 14:30:58,755 - 70 - logs.logger - INFO - Chain has successfully executed. 
+ 2024-03-28 14:32:17,494 - 36 - logs.logger - INFO - Starting scraping...  
+ 2024-03-28 14:32:21,808 - 38 - logs.logger - INFO - Content scraped 
+ 2024-03-28 14:32:21,816 - 66 - logs.logger - INFO - Chain execution has started . . .  
+ 2024-03-28 14:32:29,682 - 70 - logs.logger - INFO - Chain has successfully executed. 
+ 2024-03-28 14:33:42,752 - 36 - logs.logger - INFO - Starting scraping...  
+ 2024-03-28 14:33:46,793 - 38 - logs.logger - INFO - Content scraped 
+ 2024-03-28 14:33:46,801 - 66 - logs.logger - INFO - Chain execution has started . . .  
+ 2024-03-28 14:33:51,851 - 70 - logs.logger - INFO - Chain has successfully executed. 
+ 2024-03-28 14:34:10,663 - 36 - logs.logger - INFO - Starting scraping...  
+ 2024-03-28 14:34:14,818 - 38 - logs.logger - INFO - Content scraped 
+ 2024-03-28 14:34:14,827 - 65 - logs.logger - INFO - Chain execution has started . . .  
+ 2024-03-28 14:34:37,873 - 69 - logs.logger - INFO - Chain has successfully executed. 

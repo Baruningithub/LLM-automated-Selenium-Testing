@@ -6,11 +6,11 @@ from langchain_experimental.utilities import PythonREPL
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.exceptions import OutputParserException
 from utils import sanitize_output
-from chat_templates import html_src, system_prompt
+from chat_templates import html_file_reader, system_prompt, html_scrapper
 from logs.logger import logger
 import requests
 from requests.exceptions import RequestException
-from configs.read_config import Read_Config 
+from configs.read_config import Read_Config,Read_Configs 
 
 # Load environment variables from the .env file where our api key is stored
 load_dotenv()
@@ -21,17 +21,28 @@ api_k = os.getenv('OPENAI_API_KEY')
 # chat model object (default model- gpt3.5 turbo)
 chat_model = ChatOpenAI(temperature=0.7, api_key = api_k)
 
-# fetching url from config file
-url = Read_Config("configs/url.ini", "admin_page", "url")
 
-sys_prompt = system_prompt("Selenium generator using html src")
-src_prompt = html_src(["html_templates/index.html","html_templates/data_entry.html"])
+
+# fetching home page url from config file
+home_url = Read_Config("configs/url.ini", "admin_page", "url")
+
+sys_prompt = system_prompt("Selenium 4.18.1 generator")
+
+# fetching urls for scrapping 
+page_list = ["admin_page", "data_entry"]
+urls = Read_Configs("configs/url.ini", page_list, "url")
+
+# web scrapping
+logger.info("Starting scraping... ")
+html_src_prompt = html_scrapper(urls)
+logger.info("Content scraped") 
+
 
 # chat template 
 chat_template = ChatPromptTemplate.from_messages(
     [
         ("system", sys_prompt),
-        ("human", src_prompt),
+        ("human", html_src_prompt),
         ("human", "{url}")
     ]
 )
@@ -47,13 +58,13 @@ if __name__=='__main__':
   
   try:
     # checking web appplication status
-    response = requests.get(url)
+    response = requests.get(home_url)
     response.raise_for_status()
 
     # invoking chain results
     logger.info("Chain execution has started . . . ") 
 
-    chain.invoke({"url":url})    # chain invoke 
+    chain.invoke({"url":home_url})    # chain invoke 
 
     logger.info("Chain has successfully executed.")
 

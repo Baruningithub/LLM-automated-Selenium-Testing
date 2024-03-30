@@ -22,10 +22,10 @@ api_k = os.getenv('OPENAI_API_KEY')
 chat_model = ChatOpenAI(temperature=0.8, api_key = api_k)
 
 
-
 # fetching home page url from config file
 home_url = Read_Config("configs/url.ini", "admin_page", "url")
 
+# prompt to define sytem
 sys_prompt = system_prompt("Selenium 4.18.1 generator")
 
 # fetching urls for scrapping 

@@ -1,29 +1,6 @@
 # functions to define our prompt templates
 from langchain_community.document_loaders import AsyncChromiumLoader,AsyncHtmlLoader
 
-def html_file_reader(file_paths:list)->str:
-    """Reads multiple html src files, concatenates their content
-
-    Args:
-        file_paths (list): source files
-
-    Returns:
-        str: source as text
-    """
-    
-    combined_contents = []
-    for file_path in file_paths:
-        try:
-            with open(file_path, 'r') as file:
-                file_contents = file.read()
-                combined_contents.append(file_contents)  
-        except FileNotFoundError:
-            print(f"File '{file_path}' not found.")
-        except Exception as e:
-            print(f"Error occurred while reading file '{file_path}': {e}")
-
-    return '\n#next page\n'.join(combined_contents)
-
 
 def html_scrapper(urls: list)-> str:
     """Scraps html of multiple pages from their urls
@@ -86,3 +63,29 @@ def html_scrapper_for_liveserver(urls: list)-> str:
         combined.append(''.join(src))
     return '\n#next page\n'.join(combined)
 
+
+def html_file_reader(file_paths:list)->str:
+    """Reads multiple html src files, concatenates their content
+
+    Args:
+        file_paths (list): source files
+
+    Returns:
+        str: source as text
+    """
+    
+    combined_contents = []
+    for file_path in file_paths:
+        try:
+            with open(file_path, 'r') as file:
+                file_contents = file.read()
+                combined_contents.append(file_contents)  
+        except FileNotFoundError:
+            print(f"File '{file_path}' not found.")
+        except Exception as e:
+            print(f"Error occurred while reading file '{file_path}': {e}")
+
+    return '\n#next page\n'.join(combined_contents)
+
+
+# print(html_scrapper(["https://employee-registrstion-react.vercel.app/"]))

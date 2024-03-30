@@ -88,4 +88,3 @@ def html_file_reader(file_paths:list)->str:
     return '\n#next page\n'.join(combined_contents)
 
 
-# print(html_scrapper(["https://employee-registrstion-react.vercel.app/"]))

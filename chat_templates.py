@@ -1,5 +1,5 @@
 # functions to define our prompt templates
-from langchain_community.document_loaders import AsyncChromiumLoader
+from langchain_community.document_loaders import AsyncChromiumLoader,AsyncHtmlLoader
 
 def html_file_reader(file_paths:list)->str:
     """Reads multiple html src files, concatenates their content
@@ -25,7 +25,6 @@ def html_file_reader(file_paths:list)->str:
     return '\n#next page\n'.join(combined_contents)
 
 
-
 def html_scrapper(urls: list)-> str:
     """Scraps html of multiple pages from their urls
 
@@ -35,13 +34,14 @@ def html_scrapper(urls: list)-> str:
     Returns:
         str: a combined string conatining all html sources
     """
-    combined = []
-    for url in urls:
-        loader = AsyncChromiumLoader(urls)
-        html = loader.load()
-        src = (html[0].page_content).split("<!-- Code injected by live-server -->")[0]
-        combined.append(''.join(src))
-    return '\n#next page\n'.join(combined)
+    src = []
+    loader = AsyncHtmlLoader(urls)
+    docs = loader.load()
+    for doc in docs:
+        src.append(doc.page_content)
+    return '\n#next page\n'.join(src)
+    
+
 
 
 # predefined choices for our prompts 
@@ -66,3 +66,23 @@ def system_prompt(choice:str)->str:
         str: predefined prompt for your choice
     """
     return system_prompt_choices[choice]
+
+
+
+def html_scrapper_for_liveserver(urls: list)-> str:
+    """Scraps html of multiple pages from their urls
+
+    Args:
+        urls (list): list of urls to be scrapped
+
+    Returns:
+        str: a combined string conatining all html sources
+    """
+    combined = []
+    for url in urls:
+        loader = AsyncChromiumLoader(urls)
+        html = loader.load()
+        src = (html[0].page_content).split("<!-- Code injected by live-server -->")[0]
+        combined.append(''.join(src))
+    return '\n#next page\n'.join(combined)
+

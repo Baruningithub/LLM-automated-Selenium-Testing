@@ -6,7 +6,7 @@ from langchain_experimental.utilities import PythonREPL
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.exceptions import OutputParserException
 from utils import sanitize_output
-from chat_templates import html_file_reader, system_prompt, html_scrapper
+from chat_templates import system_prompt, html_scrapper
 from logs.logger import logger
 import requests
 from requests.exceptions import RequestException
@@ -19,7 +19,7 @@ load_dotenv()
 api_k = os.getenv('OPENAI_API_KEY')
 
 # chat model object (default model- gpt3.5 turbo)
-chat_model = ChatOpenAI(temperature=0.7, api_key = api_k)
+chat_model = ChatOpenAI(temperature=0.8, api_key = api_k)
 
 
 

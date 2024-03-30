@@ -38,3 +38,38 @@
  2024-03-28 14:34:14,818 - 38 - logs.logger - INFO - Content scraped 
  2024-03-28 14:34:14,827 - 65 - logs.logger - INFO - Chain execution has started . . .  
  2024-03-28 14:34:37,873 - 69 - logs.logger - INFO - Chain has successfully executed. 
+ 2024-03-30 18:06:43,940 - 36 - logs.logger - INFO - Starting scraping...  
+ 2024-03-30 18:06:44,023 - 38 - logs.logger - INFO - Content scraped 
+ 2024-03-30 18:06:44,025 - 65 - logs.logger - INFO - Chain execution has started . . .  
+ 2024-03-30 18:07:24,950 - 36 - logs.logger - INFO - Starting scraping...  
+ 2024-03-30 18:07:25,018 - 38 - logs.logger - INFO - Content scraped 
+ 2024-03-30 18:07:25,021 - 65 - logs.logger - INFO - Chain execution has started . . .  
+ 2024-03-30 18:07:32,572 - 69 - logs.logger - INFO - Chain has successfully executed. 
+ 2024-03-30 18:07:39,892 - 36 - logs.logger - INFO - Starting scraping...  
+ 2024-03-30 18:07:39,965 - 38 - logs.logger - INFO - Content scraped 
+ 2024-03-30 18:07:39,967 - 65 - logs.logger - INFO - Chain execution has started . . .  
+ 2024-03-30 18:08:00,749 - 69 - logs.logger - INFO - Chain has successfully executed. 
+ 2024-03-30 18:10:17,867 - 36 - logs.logger - INFO - Starting scraping...  
+ 2024-03-30 18:10:17,933 - 38 - logs.logger - INFO - Content scraped 
+ 2024-03-30 18:10:17,935 - 65 - logs.logger - INFO - Chain execution has started . . .  
+ 2024-03-30 18:10:35,541 - 69 - logs.logger - INFO - Chain has successfully executed. 
+ 2024-03-30 18:11:04,196 - 36 - logs.logger - INFO - Starting scraping...  
+ 2024-03-30 18:11:04,261 - 38 - logs.logger - INFO - Content scraped 
+ 2024-03-30 18:11:04,263 - 65 - logs.logger - INFO - Chain execution has started . . .  
+ 2024-03-30 18:11:18,664 - 69 - logs.logger - INFO - Chain has successfully executed. 
+ 2024-03-30 18:11:44,035 - 36 - logs.logger - INFO - Starting scraping...  
+ 2024-03-30 18:11:44,105 - 38 - logs.logger - INFO - Content scraped 
+ 2024-03-30 18:11:44,107 - 65 - logs.logger - INFO - Chain execution has started . . .  
+ 2024-03-30 18:11:58,175 - 69 - logs.logger - INFO - Chain has successfully executed. 
+ 2024-03-30 18:12:08,943 - 36 - logs.logger - INFO - Starting scraping...  
+ 2024-03-30 18:12:09,012 - 38 - logs.logger - INFO - Content scraped 
+ 2024-03-30 18:12:09,014 - 65 - logs.logger - INFO - Chain execution has started . . .  
+ 2024-03-30 18:12:26,114 - 69 - logs.logger - INFO - Chain has successfully executed. 
+ 2024-03-30 18:12:41,568 - 36 - logs.logger - INFO - Starting scraping...  
+ 2024-03-30 18:12:41,637 - 38 - logs.logger - INFO - Content scraped 
+ 2024-03-30 18:12:41,640 - 65 - logs.logger - INFO - Chain execution has started . . .  
+ 2024-03-30 18:12:54,829 - 69 - logs.logger - INFO - Chain has successfully executed. 
+ 2024-03-30 18:12:59,024 - 36 - logs.logger - INFO - Starting scraping...  
+ 2024-03-30 18:12:59,094 - 38 - logs.logger - INFO - Content scraped 
+ 2024-03-30 18:12:59,096 - 65 - logs.logger - INFO - Chain execution has started . . .  
+ 2024-03-30 18:13:17,094 - 69 - logs.logger - INFO - Chain has successfully executed. 

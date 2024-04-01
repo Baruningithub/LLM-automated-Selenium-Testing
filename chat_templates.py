@@ -17,20 +17,7 @@ def html_scrapper(urls: list)-> str:
     for doc in docs:
         src.append(doc.page_content)
     return '\n#next page\n'.join(src)
-    
-
-
-
-# predefined choices for our prompts 
-system_prompt_choices = {
-
-    "Selenium 4.18.1 generator":
-    '''You are a Python Selenium 4.18.1 script generator, which generates Python Selenium 4.18.1 script for all 
-    classes (use ID or path) of all given HTML/JavaScript pages separated by '#next page' followed by the home 
-    page URL which you can directly use as get URL. Use http try and exceptions for the pages, also add sufficient 
-    time sleeps after input send keys and for web waiting.''',
-
-}    
+       
 
 
 def system_prompt(choice:str)->str:
@@ -43,6 +30,15 @@ def system_prompt(choice:str)->str:
         str: predefined prompt for your choice
     """
     return system_prompt_choices[choice]
+
+system_prompt_choices = {
+    "Selenium 4.18.1 generator":
+
+    '''You are a Python Selenium 4.18.1 script generator, which generates Python Selenium 4.18.1 script for all 
+    classes (use ID or path) of all given HTML/JavaScript pages separated by '#next page' followed by the home 
+    page URL which you can directly use as get URL. Use http try and exceptions for the pages, also add sufficient 
+    time sleeps after input send keys and for web waiting.'''
+}
 
 
 

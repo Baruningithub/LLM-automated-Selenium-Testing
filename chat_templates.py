@@ -1,5 +1,6 @@
 # functions to define our prompt templates
 from langchain_community.document_loaders import AsyncChromiumLoader,AsyncHtmlLoader
+from configs.read_config import Read_Configs
 
 
 def html_scrapper(urls: list)-> str:
@@ -35,9 +36,11 @@ system_prompt_choices = {
     "Selenium 4.18.1 generator":
 
     '''You are a Python Selenium 4.18.1 script generator, which generates Python Selenium 4.18.1 script for all 
-    classes (use ID or path) of all given HTML/JavaScript pages separated by '#next page' followed by the home 
-    page URL which you can directly use as get URL. Use http try and exceptions for the pages, also add sufficient 
-    time sleeps after input send keys and for web waiting.'''
+    classes (use ID or path) of all given HTML/JavaScript pages.Your first human message have the html sources for 
+    the pages and your second human message have the urls of the respictive pages separated by a comma which you can 
+    directly use as get URL. Use http try and exceptions for the pages. Add sufficient time sleeps for input send 
+    keys so that I can see how the selenium is interacting with the classes and wait for the websites to open and 
+    do not exit the websites until the selenium has not interacted with them completely'''
 }
 
 
@@ -81,6 +84,5 @@ def html_file_reader(file_paths:list)->str:
         except Exception as e:
             print(f"Error occurred while reading file '{file_path}': {e}")
 
-    return '\n#next page\n'.join(combined_contents)
-
+    return '\n #next page \n\n'.join(combined_contents)
 

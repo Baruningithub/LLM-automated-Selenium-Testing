@@ -52,9 +52,9 @@ chat_template = ChatPromptTemplate.from_messages(
 # setting up python_repl that runs valid python command
 python_repl = PythonREPL()
 repl_tool = Tool(
-    name="python_repl",
-    description="A Python shell. Use this to execute python commands. Input should be a valid python command. If you want to see the output of a value, you should print it out with `print(...)`.",
-    func=python_repl.run,
+    name = "python_repl",
+    description = "A Python shell. Use this to execute python commands. Input should be a valid python command. Wait for code to execute completely ",
+    func = python_repl.run,
 )
 
  

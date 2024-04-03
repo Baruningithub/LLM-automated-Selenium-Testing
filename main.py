@@ -49,15 +49,17 @@ chat_template = ChatPromptTemplate.from_messages(
     ]
 )
 
-
+# setting up python_repl that runs valid python command
+python_repl = PythonREPL()
 repl_tool = Tool(
     name="python_repl",
-    description="A Python shell. Use this to execute python commands. Input should be a valid python command."
+    description="A Python shell. Use this to execute python commands. Input should be a valid python command. If you want to see the output of a value, you should print it out with `print(...)`.",
+    func=python_repl.run,
 )
-# the model chain 
+
+ 
 # StrOutputParser() - converts response into parsable string
-# PythonREPL().run - excutes the final sanitised result (the selenium starts interacting with the webpages)
-chain = chat_template | chat_model | StrOutputParser() | sanitize_output | PythonREPL().run
+chain = chat_template | chat_model | StrOutputParser() | sanitize_output | repl_tool
 
 
 if __name__=='__main__':

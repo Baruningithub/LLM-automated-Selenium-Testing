@@ -64,7 +64,6 @@ chain = chat_template | chat_model | StrOutputParser() | sanitize_output | repl_
 
 
 if __name__=='__main__':
-  
   try:
     # checking web appplication status
     response = requests.get(urls[0])

@@ -45,6 +45,7 @@ system_prompt_choices = {
 
 
 
+
 def html_scrapper_for_liveserver(urls: list)-> str:
     """Scraps html of multiple pages from their urls
 

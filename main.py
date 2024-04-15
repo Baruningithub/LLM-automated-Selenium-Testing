@@ -60,20 +60,26 @@ repl_tool = Tool(
 
  
 # StrOutputParser() - converts response into parsable string
-chain = chat_template | chat_model | StrOutputParser() | sanitize_output | repl_tool
+chain = (
+        chat_template |
+        chat_model | 
+        StrOutputParser() | 
+        sanitize_output |
+        (lambda x: repl_tool(x) if x is not None else None)
+        )
 
 
 if __name__=='__main__':
   try:
     # checking web appplication status
-    response = requests.get(urls[0])
+    response = requests.get(urls[0])  
     response.raise_for_status()
 
     # invoking chain results
     logger.info("Chain execution has started . . . ") 
 
-    chain.invoke({"urls":read_urls(urls)})    # chain invoke 
-    time.sleep(2)
+    chain.invoke({"urls":read_urls(urls)})  # chain invoke 
+    time.sleep(2) 
 
     logger.info("Chain has successfully executed.")
 

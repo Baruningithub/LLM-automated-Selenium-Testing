@@ -7,7 +7,7 @@ from logs.logger import logger
 from langchain_core.prompts import ChatPromptTemplate
 
 
-path = ("/home/barunh/Documents/gpt4all-falcon-newbpe-q4_0.gguf")
+model_path = ("/home/barunh/Documents/mpt-7b-chat-newbpe-q4_0.gguf")
 
 # fetching urls form config files
 page_list = ["admin_page", "data_entry"]
@@ -18,7 +18,7 @@ logger.info("Starting scraping... ")
 html_src_prompt = html_scrapper(urls)
 logger.info("Content scraped")
 
-llm = GPT4All(model=path)
+llm = GPT4All(model=model_path)
 
 sys_prompt = system_prompt("Selenium 4.18.1 generator")
 
@@ -34,7 +34,6 @@ chat_template = ChatPromptTemplate.from_messages(
 
 llm_chain = LLMChain(prompt=chat_template, llm=llm)
 
-# question = "heloo orca how are you"
 
 logger.info("Chain execution has started . . . ") 
 print(llm_chain.invoke({"urls":read_urls(urls)})['text'])

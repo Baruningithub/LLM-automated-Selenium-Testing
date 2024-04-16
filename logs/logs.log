@@ -388,3 +388,7 @@
  2024-04-15 14:21:36,405 - 40 - logs.logger - INFO - Content scraped 
  2024-04-15 14:21:36,406 - 74 - logs.logger - INFO - Chain execution has started . . .  
  2024-04-15 14:21:43,968 - 79 - logs.logger - INFO - Chain has successfully executed. 
+ 2024-04-16 12:59:43,176 - 38 - logs.logger - INFO - Starting scraping...  
+ 2024-04-16 12:59:43,445 - 40 - logs.logger - INFO - Content scraped 
+ 2024-04-16 12:59:43,447 - 79 - logs.logger - INFO - Chain execution has started . . .  
+ 2024-04-16 13:00:36,612 - 84 - logs.logger - INFO - Chain has successfully executed. 

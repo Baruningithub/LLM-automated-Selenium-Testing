@@ -18,29 +18,29 @@ import time
 # Load environment variables from the .env file where our api key is stored
 load_dotenv()
 
-# fetching the api key from the .env file
+# Fetching the api key from the .env file
 api_k = os.getenv('OPENAI_API_KEY')
 
 # chat model object (default model- gpt3.5 turbo)
 chat_model = ChatOpenAI(temperature=0.8, api_key = api_k)
 
 
-# prompt to define sytem
+# Prompt to define sytem
 sys_prompt = system_prompt("Selenium 4.18.1 generator")
 
 
-# fetching urls form config files
+# Fetching urls form config files
 page_list = ["admin_page", "data_entry"]
 urls = Read_Configs("configs/url.ini", page_list, "url")
 
 
-# web scrapping
+# Web scrapping
 logger.info("Starting scraping... ")
 html_src_prompt = html_scrapper(urls)
 logger.info("Content scraped") 
 
 
-# chat template 
+# Chat template 
 chat_template = ChatPromptTemplate.from_messages(
     [
         ("system", sys_prompt),
@@ -49,7 +49,7 @@ chat_template = ChatPromptTemplate.from_messages(
     ]
 )
 
-# setting up python_repl that runs valid python command
+# Setting up python_repl that runs valid python command
 python_repl = PythonREPL()
 repl_tool = Tool(
     name = "python_repl",
@@ -71,11 +71,11 @@ chain = (
 
 if __name__=='__main__':
   try:
-    # checking web appplication status
+    # Checking web appplication status
     response = requests.get(urls[0])  
     response.raise_for_status()
 
-    # invoking chain results
+    # Invoking chain results
     logger.info("Chain execution has started . . . ") 
 
     chain.invoke({"urls":read_urls(urls)})  # chain invoke 

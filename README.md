@@ -1,4 +1,4 @@
-# OpenAI automated Selenium Project
+# LLM automated Selenium Project
 
 1. This Project uses LLMs to generate Selenium script of given html pages as prompt and executes the same using langchain.
 2. Here we are giving a simple two page html/js login webpage, one login form followed by one data entry form as url to the scrapper defined using langchain itself.

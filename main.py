@@ -18,8 +18,11 @@ import time
 # Load environment variables from the .env file where our api key is stored
 load_dotenv()
 
+# fetching the api key from the .env file
+api_k = os.getenv('OPENAI_API_KEY')
+
 # chat model object (default model- gpt3.5 turbo)
-chat_model = ChatOpenAI(temperature=0.8)
+chat_model = ChatOpenAI(temperature=0.8,api_key=api_k)
 
 
 # Prompt to define sytem

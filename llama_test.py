@@ -33,7 +33,7 @@ logger.info("Content scraped")
 
 llm = ChatLlamaAPI(client=llama)
 
-sys_prompt = system_prompt("Selenium 4.18.1 generator llama2")
+sys_prompt = system_prompt("Selenium 4.20.0 generator llama2")
 
 
 # chat template 

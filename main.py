@@ -26,7 +26,7 @@ chat_model = ChatOpenAI(temperature=0.8,api_key=api_k)
 
 
 # Prompt to define sytem
-sys_prompt = system_prompt("Selenium 4.18.1 generator")
+sys_prompt = system_prompt("Selenium 4.20.0 generator openai")
 
 
 # Fetching urls form config files

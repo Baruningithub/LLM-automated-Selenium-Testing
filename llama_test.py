@@ -30,9 +30,10 @@ logger.info("Starting scraping... ")
 html_src_prompt = html_scrapper(urls)
 logger.info("Content scraped")
 
+
 llm = ChatLlamaAPI(client=llama)
 
-sys_prompt = system_prompt("Selenium 4.18.1 generator")
+sys_prompt = system_prompt("Selenium 4.18.1 generator llama2")
 
 
 # chat template 
@@ -44,9 +45,9 @@ chat_template = ChatPromptTemplate.from_messages(
     ]
 )
 
-llm_chain = LLMChain(prompt=chat_template, llm=llm)
+llm_chain = chat_template | llm
 
 
 logger.info("Chain execution has started . . . ") 
-print(llm_chain.invoke({"urls":read_urls(urls)})['text'])
+print(llm_chain.invoke({"urls":read_urls(urls)}).content)
 logger.info("Chain has successfully executed.")

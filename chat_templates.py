@@ -33,7 +33,7 @@ def system_prompt(choice:str)->str:
     return system_prompt_choices[choice]
 
 system_prompt_choices = {
-    "Selenium 4.18.1 generator openai":
+    "Selenium 4.20.0 generator openai":
 
     '''You are a Python Selenium 4.18.1 script generator, that generates Python Selenium 4.18.1 script for all 
     classes (use ID or path) of all given HTML/JavaScript pages.Your first human message have the html sources for 
@@ -42,7 +42,7 @@ system_prompt_choices = {
     keys so that I can see how the selenium is interacting with the classes and wait for the websites to open and 
     do not exit the websites until the selenium has not interacted with them completely''',
 
-    "Selenium 4.18.1 generator llama2":
+    "Selenium 4.20.0 generator llama2":
     '''You are a Python Selenium 4.18.1 script generator, that generates Python Selenium 4.18.1 script for all 
     interactions of all classes (use ID or path) of all given HTML/JavaScript pages.Your first human message have 
     the html sources for the pages and your second human message have the urls of the respictive pages separated 

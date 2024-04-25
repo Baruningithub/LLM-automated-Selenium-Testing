@@ -1,7 +1,16 @@
 from llamaapi import LlamaAPI
 from langchain_experimental.llms import ChatLlamaAPI
+from dotenv import load_dotenv
+import os
 
-llama = LlamaAPI("LL-VgYKjgRlpb0I7sFAUE5SPUipwyn6sINxJOmiOP5ACcUux2adLl5x8iDckNi5B8yf")
+
+# Load environment variables from the .env file where our api key is stored
+load_dotenv()
+
+# fetching the api key from the .env file
+api_k = os.getenv('LLAMA_API_KEY')
+
+llama = LlamaAPI(api_token=api_k)
 
 
 from langchain.chains import LLMChain

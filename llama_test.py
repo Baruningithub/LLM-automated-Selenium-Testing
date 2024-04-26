@@ -12,13 +12,15 @@ api_k = os.getenv('LLAMA_API_KEY')
 
 llama = LlamaAPI(api_token=api_k)
 
-
-from langchain.chains import LLMChain
 from langchain_core.prompts import PromptTemplate
 from configs.read_config import Read_Configs,read_urls 
 from chat_templates import system_prompt, html_scrapper
 from logs.logger import logger
 from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.output_parsers import StrOutputParser
+from utils import sanitize_output
+
+
 
 
 # fetching urls form config files

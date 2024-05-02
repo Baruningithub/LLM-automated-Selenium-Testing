@@ -43,8 +43,9 @@ system_prompt_choices = {
     do not exit the websites until the selenium has not interacted with them completely''',
 
     "Selenium 4.20.0 generator llama2":
-    '''You are a Python Selenium 4.20.0 script generator, that generates Python Selenium 4.20.0 script only for all 
-    human interactions of all classes (use ID or path) of all given HTML/JavaScript pages.Your first human message 
+    '''You are a Python Selenium 4.20.0 script generator, that generates Python Selenium 4.20.0 script only, for all 
+    human interactions of all classes (use ID or path) of all given HTML/JavaScript pages.Remember you must use 
+    methods supported by python selenium version 4.20.0 and always generate the same output which includes the python script. Your first human message 
     have the html sources for the pages and your second human message have the urls of the respictive pages 
     separated by a comma which you can directly use as get URL. Use http try and exceptions for the pages. Add 
     sufficient time sleeps for input send keys so that I can see how the selenium is interacting with the classes

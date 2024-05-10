@@ -17,8 +17,8 @@ from configs.read_config import Read_Configs,read_urls
 from chat_templates import system_prompt, html_scrapper
 from logs.logger import logger
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.output_parsers import StrOutputParser
-from utils import sanitize_output
+# from langchain_core.output_parsers import StrOutputParser
+# from utils import sanitize_output
 
 
 
@@ -32,9 +32,10 @@ logger.info("Starting scraping... ")
 html_src_prompt = html_scrapper(urls)
 logger.info("Content scraped")
 
-
+# llama2 llm call
 llm = ChatLlamaAPI(client=llama)
 
+# system prompt for the llm
 sys_prompt = system_prompt("Selenium 4.20.0 generator llama2")
 
 
@@ -47,9 +48,10 @@ chat_template = ChatPromptTemplate.from_messages(
     ]
 )
 
+# chain of llm calls
 llm_chain = chat_template | llm
 
-
-logger.info("Chain execution has started . . . ") 
+# chain invoke to test reponse
+logger.info("Chain execution has started . . .") 
 print(llm_chain.invoke({"urls":read_urls(urls)}).content)
 logger.info("Chain has successfully executed.")

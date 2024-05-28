@@ -27,7 +27,7 @@ api_k = os.getenv('OPENAI_API_KEY')
 llm = ChatOpenAI(temperature=0.8,api_key=api_k)
 
 
-# Prompt to define sytem
+# Prompt for system message
 sys_prompt = system_prompt("Selenium 4.20.0 generator openai")
 
 

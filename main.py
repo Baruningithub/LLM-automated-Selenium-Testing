@@ -24,7 +24,7 @@ load_dotenv()
 api_k = os.getenv('OPENAI_API_KEY')
 
 # chat model object (default model- gpt3.5 turbo)
-chat_model = ChatOpenAI(temperature=0.8,api_key=api_k)
+llm = ChatOpenAI(temperature=0.8,api_key=api_k)
 
 
 # Prompt to define sytem
@@ -42,8 +42,8 @@ html_src_prompt = html_scrapper(urls)
 logger.info("Content scraped") 
 
 
-# Chat template 
-chat_template = ChatPromptTemplate.from_messages(
+# Prompt
+prompt = ChatPromptTemplate.from_messages(
     [
         ("system", sys_prompt),
         ("human", html_src_prompt),
@@ -63,8 +63,8 @@ repl_tool = Tool(
  
 # StrOutputParser() - converts response into parsable string
 chain = (
-        chat_template |
-        chat_model | 
+        prompt |
+        llm | 
         StrOutputParser() | 
         sanitize_output |
         (lambda x: repl_tool(x) if x is not None else None)
@@ -127,7 +127,7 @@ def execute_chain(urls:list, max_attempts=5, attempt=1):
 
     # If selenium didnt execute properly or validation failed, retry
     logger.info(f"Retrying... Attempt {attempt}/{max_attempts}")
-    time.sleep(3)  # wait for some time before reexecuting
+    time.sleep(3)  # wait for some time before re-executing
     execute_chain(urls, max_attempts, attempt + 1)
 
 if __name__ == '__main__':

@@ -5,14 +5,16 @@ from dotenv import load_dotenv
 from langchain_experimental.utilities import PythonREPL
 from langchain.tools import Tool
 from langchain_core.output_parsers import StrOutputParser
-from langchain_core.exceptions import OutputParserException
-from utils import sanitize_output
-from chat_templates import system_prompt, html_scrapper
+from utils import sanitize_output, read_urls, html_scrapper
+from sys_prompts import system_prompt
 from logs.logger import logger
 import requests
 from requests.exceptions import RequestException
-from configs.read_config import Read_Configs,read_urls 
+from configs.read_config import Read_Configs
 import time 
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.common.exceptions import WebDriverException
 
 
 # Load environment variables from the .env file where our api key is stored
@@ -69,25 +71,64 @@ chain = (
         )
 
 
-if __name__=='__main__':
-  try:
-    # Checking web appplication status
-    response = requests.get(urls[0])  
-    response.raise_for_status()
+def check_chain_interactions(chain_results,urls):
+    
+    for url in urls:
+      try:
+          # Initialize Selenium WebDriver
+          driver = webdriver.Chrome()  
+          driver.get(url)  
 
-    # Invoking chain results
-    logger.info("Chain execution has started . . . ") 
+          # Check if the elements interacted with by the chain are present on the webpage
+          for result in chain_results:
+              element = driver.find_element(By.XPATH, f"//*[contains(text(), '{result}')]")
+              if not element:
+                  logger.error(f"Element {result} not found on the webpage")
+                  return False
 
-    chain.invoke({"urls":read_urls(urls)})  # chain invoke 
-    time.sleep(2) 
+          driver.quit()
+          return True
 
-    logger.info("Chain has successfully executed.")
+      except WebDriverException as e:
+          logger.error(f"Selenium WebDriver error: {e}")
+          return False
+      
 
+  
+def execute_chain(urls:list, max_attempts=5, attempt=1):
+    
+    if attempt > max_attempts:
+        logger.error("Max attempts reached. Exiting.")
+        return
 
-  except RequestException as re:
-    logger.error("Unable to request web application")
-    print("Error occurred while requesting web app: ",re)
+    try:
+        # Checking web application status
+        response = requests.get(urls[0])
+        response.raise_for_status()
 
-  except OutputParserException as e:
-    logger.error("Unable to execute chain")
-    print("Error occurred while parsing the output: ",e)
+        # Invoking chain results
+        logger.info("Chain execution has started . . . ")
+
+        # Capture relevant information during chain execution
+        chain_results = chain.invoke({"urls": read_urls(urls)})  # chain invoke
+        time.sleep(2)
+
+        logger.info("Chain has successfully executed.")
+
+        # Check if Selenium process executed properly
+        if not check_chain_interactions(chain_results,urls):
+            raise RuntimeError("Selenium process did not execute properly")
+
+        return 
+
+    except (RequestException, ValueError, RuntimeError) as e:
+        logger.error(f"Error occurred: {e}")
+        print(f"Error occurred: {e}")
+
+    # If selenium didnt execute properly or validation failed, retry
+    logger.info(f"Retrying... Attempt {attempt}/{max_attempts}")
+    time.sleep(3)  # wait for some time before reexecuting
+    execute_chain(urls, max_attempts, attempt + 1)
+
+if __name__ == '__main__':
+    execute_chain(urls=urls)

@@ -66,9 +66,6 @@ You need Open AI API **Key** to use this project. To get your key, follow these 
 - **python-dotenv**: Reads the key-value pair from .env file and adds them to environment variable.
 - **selenium**: A powerful tool for controlling web browsers through programs and performing browser automation.
 
-## Challenges Faced 
-
-## Future goals
 
 ## 📚Links and References
 

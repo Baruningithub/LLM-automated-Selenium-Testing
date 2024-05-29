@@ -7,7 +7,7 @@
 4. [Packages used](#packages-used)
 5. [Challenges faced](#challenges-faced)
 6. [Future goals](#future-goals)
-7. [Links and References](#Links-and-References)
+7. [Links and References](#links-and-references)
 ## Introduction 
 
 1. This Project uses api integrated LLM(OpenAI-gpt3.5 turbo) to generate Selenium script of given html pages as prompt and executes the same using langchain.
@@ -70,7 +70,7 @@ You need Open AI API **Key** to use this project. To get your key, follow these 
 
 ## Future goals
 
-## 📚 Links-and-References
+## 📚Links and References
 
 
 Thanks for reading!

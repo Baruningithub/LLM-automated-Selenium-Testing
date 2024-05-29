@@ -72,6 +72,12 @@ You need Open AI API **Key** to use this project. To get your key, follow these 
 
 ## 📚Links and References
 
+- [LangChain documentation](https://python.langchain.com/v0.1/docs/get_started/introduction
+)
+- [OpenAI API documentation](https://platform.openai.com/docs/overview
+)
+
+
 
 Thanks for reading!
 

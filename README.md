@@ -1,5 +1,13 @@
 # LLM automated Selenium Project
 
+## 📌 Table of Contents
+1. [Introduction](#introduction)
+2. [Implementation](#implementation)
+3. [Features](#features)
+4. [WebUI - Application Showcase](#webui---application-showcase)
+5. [Vertex AI Integration](#vertex-ai-integration)
+6. [📸 Image Showcase](#📸-image-showcase)
+7. [Packages Used](#packages-used)
 ## Introduction 
 
 1. This Project uses api integrated LLM(OpenAI-gpt3.5 turbo) to generate Selenium script of given html pages as prompt and executes the same using langchain.
@@ -57,6 +65,10 @@ You need Open AI API **Key** to use this project. To get your key, follow these 
 - **openai**: A Python client library for interacting with the OpenAI API.
 - **python-dotenv**: Reads the key-value pair from .env file and adds them to environment variable.
 - **selenium**: A powerful tool for controlling web browsers through programs and performing browser automation.
+
+## Challenges Faced 
+
+## Future goals
 
 ## 📚 Links-and-References
 

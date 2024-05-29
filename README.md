@@ -21,7 +21,7 @@ To ensure a consistent and isolated development environment, we use Python's bui
    source venv/bin/activate
 ```
 
- **Install the required dependencies from the [`requirements.txt`]() file**:
+ **Install the required dependencies from the [`requirements.txt`](https://gitlab.mindfire.co.in/barunh/openai-automated-selenium-project/-/blob/main/requirements.txt) file**:
  
    ```sh
    pip install --upgrade pip
@@ -31,7 +31,7 @@ To ensure a consistent and isolated development environment, we use Python's bui
 
 ### Execution
 
-Run the [`main.py`]() file on your local machine with Python 3.10+ installed:
+Run the [`main.py`](https://gitlab.mindfire.co.in/barunh/openai-automated-selenium-project/-/blob/main/main.py) file on your local machine with Python 3.10+ installed:
 
   ```sh
 cd /path/to/your/project

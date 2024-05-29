@@ -3,11 +3,11 @@
 ## 📌 Table of Contents
 1. [Introduction](#introduction)
 2. [Implementation](#implementation)
-3. [Features](#features)
-4. [WebUI - Application Showcase](#webui---application-showcase)
-5. [Vertex AI Integration](#vertex-ai-integration)
-6. [📸 Image Showcase](#📸-image-showcase)
-7. [Packages Used](#packages-used)
+3. [OpenAI Integration](#openai-integration)
+4. [Packages used](#packages-used)
+5. [Challenges faced](#challenges-faced)
+6. [Future goals](#future-goals)
+7. [Links and References](#Links-and-References)
 ## Introduction 
 
 1. This Project uses api integrated LLM(OpenAI-gpt3.5 turbo) to generate Selenium script of given html pages as prompt and executes the same using langchain.

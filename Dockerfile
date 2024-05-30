@@ -16,3 +16,4 @@ COPY js/data_entry.js /usr/share/nginx/html/js/data_entry.js
 
 EXPOSE 80
 
+

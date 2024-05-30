@@ -10,11 +10,12 @@
 7. [Links and References](#links-and-references)
 ## Introduction 
 
-1. This Project uses api integrated LLM(OpenAI-gpt3.5 turbo) to generate Selenium script of given html pages as prompt and executes the same using langchain.
-2. Here we are giving a simple two page html/js login webpage, one login form followed by one data entry form as url to the scrapper defined using langchain itself.
-3. The scrapped html source is now feeded to the model as prompt followed by their url as well.
-4. Using a langchain chain we are generating the selenium script, modifying it into executable code and executing it all at once.
-5. We are able to succesfully interact with all classes in the login page, redirect to data entry page, interact with all its classes and finally quit the driver.
+1. This project uses the OpenAI GPT-3.5 Turbo API to generate Selenium scripts from given HTML pages and executes them using LangChain.
+2. A couple of sample website URLs are provided to the web scraper, which is built using LangChain.
+3. The scraped HTML source is fed to the model as a prompt, along with the URL.
+4. A LangChain chain created using prompts,llm and code executer generates the Selenium script, modifies it into executable code, and executes it.
+5. The process includes interacting with all elements on the on the sample pages and finally quitting the driver.
+
 
 ## Implementation
 

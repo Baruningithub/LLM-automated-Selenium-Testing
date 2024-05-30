@@ -32,13 +32,3 @@ def Read_Configs(ini_file_path:str, entries: list, value:str)->list:
         values.append(Read_Config(ini_file_path, entry, value))
     return values
 
-def read_urls(list_of_urls:list)->str:
-    """_summary_
-
-    Args:
-        list_of_urls (list): _description_
-
-    Returns:
-        str: _description_
-    """
-    return ", ".join(list_of_urls)

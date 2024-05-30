@@ -5,9 +5,7 @@
 2. [Implementation](#implementation)
 3. [OpenAI Integration](#openai-integration)
 4. [Packages used](#packages-used)
-5. [Challenges faced](#challenges-faced)
-6. [Future goals](#future-goals)
-7. [Links and References](#links-and-references)
+5. [Links and References](#links-and-references)
 ## Introduction 
 
 1. This project uses the OpenAI GPT-3.5 Turbo API to generate Selenium scripts from given HTML pages and executes them using LangChain.

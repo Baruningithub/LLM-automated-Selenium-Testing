@@ -1,3 +1,6 @@
+
+#Failed llm, much heavier llm to execute on local CPU, even crashes on collab GPU.
+
 import transformers
 from transformers import AutoTokenizer, AutoModelForCausalLM
 

@@ -1,3 +1,6 @@
+
+#Failed llm, returns inconsistent(different) response everytime and not clever enough to understand the concept.
+
 from llamaapi import LlamaAPI
 from langchain_experimental.llms import ChatLlamaAPI
 from dotenv import load_dotenv
@@ -18,8 +21,7 @@ from sys_prompts import system_prompt
 from utils import html_scrapper,read_urls
 from logs.logger import logger
 from langchain_core.prompts import ChatPromptTemplate
-# from langchain_core.output_parsers import StrOutputParser
-# from utils import sanitize_output
+
 
 
 

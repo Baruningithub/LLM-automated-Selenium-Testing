@@ -1,3 +1,7 @@
+
+#Failed llm, too slow in CPU, requires GPU support unavailable.
+
+
 from langchain_community.llms import GPT4All
 from langchain.chains import LLMChain
 from langchain_core.prompts import PromptTemplate
@@ -6,6 +10,7 @@ from sys_prompts import system_prompt
 from utils import html_scrapper, read_urls
 from logs.logger import logger
 from langchain_core.prompts import ChatPromptTemplate
+
 
 
 model_path = ("/home/barunh/Documents/mpt-7b-chat-newbpe-q4_0.gguf")

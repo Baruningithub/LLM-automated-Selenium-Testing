@@ -19,8 +19,8 @@ system_prompt_choices = {
     classes (use ID or path) of all given HTML/JavaScript pages.Your first human message have the html sources for 
     the pages and your second human message have the urls of the respictive pages separated by a comma which you can 
     directly use as get URL. Use http try and exceptions for the pages. ADD SUFFICIENT TIME SLEEPS FOR INPUT SEND 
-    KEYS so that I CAN SEE HOE THE SELENIUM IS INTERACTING WITH THE CLASSES and WAIT FOR WEBSITES TO OPEN and 
-    DO NOT EXIT THE WEBSITE UNTIL THE SELENIUM HAS COMPLETED ALL WEB INTERACTION COMPLETELY''',
+    KEYS so that I CAN SEE HOW THE SELENIUM IS INTERACTING WITH THE CLASSES and WAIT FOR THE WEBSITE TO OPEN and 
+    DO NOT EXIT THE WEBSITE UNTIL THE SELENIUM HAS COMPLETED ALL WEB INTERACTIONS COMPLETELY''',
 
     "Selenium 4.20.0 generator llama2":
     '''You are a Python Selenium 4.20.0 script generator, that generates Python Selenium 4.20.0 script only.The script should be generated

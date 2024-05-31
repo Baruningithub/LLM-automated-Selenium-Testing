@@ -23,8 +23,9 @@ system_prompt_choices = {
     DO NOT EXIT THE WEBSITE UNTIL THE SELENIUM HAS COMPLETED ALL WEB INTERACTIONS COMPLETELY''',
 
     "Selenium 4.20.0 generator llama2":
-    '''You are a Python Selenium 4.20.0 script generator, that generates Python Selenium 4.20.0 script only.The script should be generated
-    for all 
+    
+    '''You are a Python Selenium 4.20.0 script generator, that generates Python Selenium 4.20.0 script only.
+    The script should be generated for all 
     human interactions of all classes (use ID or path) of all given HTML/JavaScript pages.Remember you must use 
     methods supported by python selenium version 4.20.0 and always generate the same output which includes the 
     python script. Your first human message 
@@ -34,6 +35,6 @@ system_prompt_choices = {
     and wait for the websites to open and do not exit the websites until the selenium has not interacted with them 
     completely'''
 
-}
+} 
 
 

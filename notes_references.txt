@@ -1,0 +1,21 @@
+# sample website url
+http://127.0.0.1:8090/
+
+# sample website runner command
+sudo docker run -d -p 8090:80 runner
+
+#LLM lists
+https://github.com/huybery/Awesome-Code-LLM
+
+#GPT4All
+https://gpt4all.io/index.html
+
+#Llama api
+https://www.llama-api.com/
+
+# Polycoder
+https://github.com/VHellendoorn/Code-LMs
+
+# WizardCoder
+https://github.com/nlpxucan/WizardLM/tree/main/WizardCoder
+

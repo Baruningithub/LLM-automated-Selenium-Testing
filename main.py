@@ -1,5 +1,6 @@
 from langchain_openai import ChatOpenAI
 import os
+import sys
 from langchain_core.prompts import ChatPromptTemplate
 from dotenv import load_dotenv
 from langchain_experimental.utilities import PythonREPL
@@ -33,7 +34,8 @@ sys_prompt = system_prompt("Selenium 4.20.0 generator openai")
 
 # Fetching urls form config files
 page_list = ["admin_page", "data_entry"]
-urls = Read_Configs("configs/url.ini", page_list, "url")
+urls = sys.argv[1:]
+# urls = Read_Configs("configs/url.ini", page_list, "url")
 
 
 # Web scrapping
@@ -60,6 +62,17 @@ repl_tool = Tool(
     func = python_repl.run,
 )
 
+
+def save_and_process(output: str):
+    """Save output to a file and process it with repl_tool."""
+    # Save the sanitize_output to a file
+    if output is not None:
+        with open("output_scripts/selenium_script.py", "w+") as f:
+            f.write(output)
+    
+    # Process the output with the lambda function
+    return repl_tool(output) if output is not None else None
+
  
 # StrOutputParser() - converts response into parsable string
 chain = (
@@ -67,12 +80,12 @@ chain = (
         llm | 
         StrOutputParser() | 
         sanitize_output |
-        (lambda x: repl_tool(x) if x is not None else None)
+        save_and_process
         )
 
 
-def check_chain_interactions(chain_results,urls):
-    
+def check_chain_interactions(chain_results,urls)-> bool:
+    """Check if elements from chain_results are present on each webpage in urls."""
     for url in urls:
       try:
           # Initialize Selenium WebDriver
@@ -96,7 +109,7 @@ def check_chain_interactions(chain_results,urls):
 
   
 def execute_chain(urls:list, max_attempts=5, attempt=1):
-    
+    """Execute a chain process, retries if it fails, up to max_attempts."""
     if attempt > max_attempts:
         logger.error("Max attempts reached. Exiting.")
         return

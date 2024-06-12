@@ -685,3 +685,55 @@ Stacktrace:
  2024-05-30 23:27:48,585 - 42 - logs.logger - INFO - Content scraped 
  2024-05-30 23:27:48,587 - 110 - logs.logger - INFO - Chain execution has started . . .  
  2024-05-30 23:28:28,501 - 116 - logs.logger - INFO - Chain has successfully executed. 
+ 2024-06-11 17:29:29,639 - 42 - logs.logger - INFO - Starting scraping...  
+ 2024-06-11 17:29:29,904 - 44 - logs.logger - INFO - Content scraped 
+ 2024-06-11 17:29:29,910 - 123 - logs.logger - INFO - Chain execution has started . . .  
+ 2024-06-11 17:30:41,213 - 42 - logs.logger - INFO - Starting scraping...  
+ 2024-06-11 17:30:41,283 - 44 - logs.logger - INFO - Content scraped 
+ 2024-06-11 17:30:41,286 - 123 - logs.logger - INFO - Chain execution has started . . .  
+ 2024-06-11 17:31:21,170 - 42 - logs.logger - INFO - Starting scraping...  
+ 2024-06-11 17:31:21,239 - 44 - logs.logger - INFO - Content scraped 
+ 2024-06-11 17:31:21,242 - 123 - logs.logger - INFO - Chain execution has started . . .  
+ 2024-06-11 17:32:41,072 - 129 - logs.logger - INFO - Chain has successfully executed. 
+ 2024-06-11 17:34:31,277 - 42 - logs.logger - INFO - Starting scraping...  
+ 2024-06-11 17:34:31,356 - 44 - logs.logger - INFO - Content scraped 
+ 2024-06-11 17:34:31,359 - 123 - logs.logger - INFO - Chain execution has started . . .  
+ 2024-06-11 17:34:56,950 - 129 - logs.logger - INFO - Chain has successfully executed. 
+ 2024-06-12 15:21:13,939 - 42 - logs.logger - INFO - Starting scraping...  
+ 2024-06-12 15:21:14,190 - 44 - logs.logger - INFO - Content scraped 
+ 2024-06-12 15:21:14,192 - 123 - logs.logger - INFO - Chain execution has started . . .  
+ 2024-06-12 15:21:25,582 - 129 - logs.logger - INFO - Chain has successfully executed. 
+ 2024-06-12 15:21:51,023 - 106 - logs.logger - ERROR - Selenium WebDriver error: Message: no such element: Unable to locate element: {"method":"xpath","selector":"//*[contains(text(), 'I')]"}
+  (Session info: chrome=125.0.6422.112); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+#0 0x5caac2471e3a <unknown>
+#1 0x5caac215b45c <unknown>
+#2 0x5caac21a75b5 <unknown>
+#3 0x5caac21a7671 <unknown>
+#4 0x5caac21ebf14 <unknown>
+#5 0x5caac21ca4dd <unknown>
+#6 0x5caac21e92cc <unknown>
+#7 0x5caac21ca253 <unknown>
+#8 0x5caac219a1c7 <unknown>
+#9 0x5caac219ab3e <unknown>
+#10 0x5caac243827b <unknown>
+#11 0x5caac243c327 <unknown>
+#12 0x5caac2424dae <unknown>
+#13 0x5caac243cdf2 <unknown>
+#14 0x5caac240974f <unknown>
+#15 0x5caac2461128 <unknown>
+#16 0x5caac24612fb <unknown>
+#17 0x5caac2470f6c <unknown>
+#18 0x785660894ac3 <unknown>
+ 
+ 2024-06-12 15:21:51,126 - 138 - logs.logger - ERROR - Error occurred: Selenium process did not execute properly 
+ 2024-06-12 15:21:51,126 - 142 - logs.logger - INFO - Retrying... Attempt 1/5 
+ 2024-06-12 15:21:54,130 - 123 - logs.logger - INFO - Chain execution has started . . .  
+ 2024-06-12 15:22:02,240 - 138 - logs.logger - ERROR - Error occurred: too many values to unpack (expected 2) 
+ 2024-06-12 15:22:02,240 - 142 - logs.logger - INFO - Retrying... Attempt 2/5 
+ 2024-06-12 15:22:05,245 - 123 - logs.logger - INFO - Chain execution has started . . .  
+ 2024-06-12 15:22:37,955 - 129 - logs.logger - INFO - Chain has successfully executed. 
+ 2024-06-12 15:29:37,308 - 42 - logs.logger - INFO - Starting scraping...  
+ 2024-06-12 15:29:37,389 - 44 - logs.logger - INFO - Content scraped 
+ 2024-06-12 15:29:37,392 - 123 - logs.logger - INFO - Chain execution has started . . .  
+ 2024-06-12 15:30:09,965 - 129 - logs.logger - INFO - Chain has successfully executed. 

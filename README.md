@@ -38,11 +38,11 @@ To ensure a consistent and isolated development environment, we use Python's bui
 
 ### Execution
 
-Run the [`main.py`](https://gitlab.mindfire.co.in/barunh/openai-automated-selenium-project/-/blob/main/main.py) file on your local machine with Python 3.10+ installed:
+Run the [`main.py`](https://gitlab.mindfire.co.in/barunh/openai-automated-selenium-project/-/blob/main/main.py) file with webpage urls as command line arguments on your local device with Python 3.10+ installed:
 
   ```sh
 cd /path/to/your/project
-python3 main.py
+python3 main.py web_url_1 web_url_2 ...
 ```
 
 ## OpenAI Integration

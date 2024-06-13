@@ -35,7 +35,6 @@ sys_prompt = system_prompt("Selenium 4.20.0 generator openai")
 # Fetching urls form config files
 page_list = ["admin_page", "data_entry"]
 urls = sys.argv[1:]
-# urls = Read_Configs("configs/url.ini", page_list, "url")
 
 
 # Web scrapping

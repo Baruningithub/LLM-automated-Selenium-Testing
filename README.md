@@ -28,7 +28,7 @@ To ensure a consistent and isolated development environment, we use Python's bui
    source venv/bin/activate
 ```
 
- **Install the required dependencies from the [`requirements.txt`](https://gitlab.mindfire.co.in/barunh/openai-automated-selenium-project/-/blob/main/requirements.txt) file**:
+ **Install the required dependencies from the [`requirements.txt`](requirements.txt) file**:
  
    ```sh
    pip install --upgrade pip

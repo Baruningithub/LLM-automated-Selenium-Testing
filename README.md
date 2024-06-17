@@ -38,7 +38,7 @@ To ensure a consistent and isolated development environment, we use Python's bui
 
 ### Execution
 
-Run the [`main.py`](https://gitlab.mindfire.co.in/barunh/openai-automated-selenium-project/-/blob/main/main.py) file with webpage urls as command line arguments on your local device with Python 3.10+ installed:
+Run the [`main.py`](main.py) file with webpage urls as command line arguments on your local device with Python 3.10+ installed:
 
   ```sh
 cd /path/to/your/project

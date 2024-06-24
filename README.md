@@ -6,7 +6,7 @@
 3. [OpenAI Integration](#openai-integration)
 4. [Packages used](#packages-used)
 5. [Links and References](#links-and-references)
-## Introduction 
+## Overview
 
 1. This project uses the OpenAI GPT-3.5 Turbo API to generate Selenium scripts from given HTML pages and executes them using LangChain.
 2. A couple of sample website URLs are provided to the web scraper, which is built using LangChain.
